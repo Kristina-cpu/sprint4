@@ -1,4 +1,4 @@
-package samokatTests;
+package samokat.tests;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -9,6 +9,7 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import com.pages.SamokatPage;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,9 +17,14 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class ParametrizedOrderTest {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     private final String browserType;
+    private final String name;
+    private final String surname;
+    private final String address;
+    private final String phoneNumber;
+    private final String comment;
 
     public ParametrizedOrderTest(String browserType, String name, String surname, String address,
                                  String phoneNumber, String comment) {
@@ -38,11 +44,7 @@ public class ParametrizedOrderTest {
         });
     }
 
-    private final String name;
-    private final String surname;
-    private final String address;
-    private final String phoneNumber;
-    private final String comment;
+
 
     @Before
     public void setup () {

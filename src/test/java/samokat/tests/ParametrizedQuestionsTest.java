@@ -1,4 +1,4 @@
-package samokatTests;
+package samokat.tests;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -9,6 +9,7 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import com.pages.SamokatPage;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -16,7 +17,12 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class ParametrizedQuestionsTest{
 
-    WebDriver driver;
+    private WebDriver driver;
+
+    private final int questionNumber;
+    private final int answerNumber;
+
+    private final String browserType;
     @Before
     public void setup () {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
@@ -47,10 +53,7 @@ public class ParametrizedQuestionsTest{
         });
     }
 
-    private final int questionNumber;
-    private final int answerNumber;
 
-    private final String browserType;
 
     public ParametrizedQuestionsTest(String browserType,int questionNumber,
                                   int answerNumber) {

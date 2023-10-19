@@ -1,4 +1,4 @@
-package samokatTests;
+package com.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,9 +21,6 @@ public class SamokatPage {
         public void clickOnQuestion(int number) {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",
                     driver.findElement(By.id("accordion__heading-" + number)));
-
-//            Actions act =  new Actions(driver);
-//            act.moveToElement(driver.findElement(By.id("accordion__heading-" + number))).click().perform();
             driver.findElement(By.id("accordion__heading-" + number)).click();
     }
     public WebElement getAnswer(int number){
